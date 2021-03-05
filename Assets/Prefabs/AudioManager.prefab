@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8205057630318125244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8205057630318125242}
+  - component: {fileID: 8205057630318125243}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8205057630318125242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8205057630318125244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9295021, y: 3.8021214, z: -67.64426}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8205057630318125243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8205057630318125244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ffba64a215e6c0419e36e958e420790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 88b8958953f40364da7b8d9800db126f, type: 2}
+  mainMixer: {fileID: 24300002, guid: b61f8b99276ae9f498b72a206a8be519, type: 2}
+  audioSource: []
+  sounds:
+  - name: damage
+    clip: {fileID: 8300000, guid: ae6dd6b0917c24949989e1d2f09c926b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: wind
+    clip: {fileID: 8300000, guid: 2b3275353f725544b9140f4aa80b7e4b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: pageturn
+    clip: {fileID: 8300000, guid: b50a5707aa8ce6e469a93db202a6c50b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: wind2
+    clip: {fileID: 8300000, guid: 2b3275353f725544b9140f4aa80b7e4b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  musics:
+  - name: mainintro
+    producer: 
+    clip: {fileID: 8300000, guid: 1590f79d1a3dcce4288441b9cd4d3a79, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: mainloop
+    producer: 
+    clip: {fileID: 8300000, guid: fd0a977fb2ae23240815de8cbd9e84b6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Depression
+    producer: 
+    clip: {fileID: 8300000, guid: 1b10ce4960a2e9e41aa1c8d5d711f3bc, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DepressionLoop
+    producer: 
+    clip: {fileID: 8300000, guid: 804c4c30e1f28d644b4845837c5e9941, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Resentment
+    producer: 
+    clip: {fileID: 8300000, guid: ee1b6f8e856318646a0371908543170a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ResentmentLoop
+    producer: 
+    clip: {fileID: 8300000, guid: 5620eec346c63704ea9d617dd4d9b5e5, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Disappointment
+    producer: 
+    clip: {fileID: 8300000, guid: c04fda6efde10fa4c9d4da20c9c50695, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DepressionLoop
+    producer: 
+    clip: {fileID: 8300000, guid: 804c4c30e1f28d644b4845837c5e9941, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
