@@ -9,7 +9,7 @@ public class MiniGameManager : MonoBehaviour
     [SerializeField] private EmotionalState state;
     public PlayerData data;
     public Boss boss;
-    public PlayerMovement player;
+    public PlayerController player;
     public LevelLoader levelLoader;
 
     [SerializeField] private PlayAreaMov playAreaMov;

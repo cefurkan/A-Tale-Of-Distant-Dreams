@@ -9,11 +9,11 @@ public class Projectile : MonoBehaviour
     public float distance;
     public int damage;
 
-    PlayerMovement player;
+    PlayerController player;
     
     void Start()
     {
-        player = FindObjectOfType<PlayerMovement>();
+        player = FindObjectOfType<PlayerController>();
         Invoke("DestroyProjectile", lifeTime);
     }
 

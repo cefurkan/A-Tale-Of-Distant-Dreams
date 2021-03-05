@@ -27,7 +27,7 @@ public class Stick : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-          PlayerMovement col =  collision.gameObject.GetComponent<PlayerMovement>();
+          PlayerController col =  collision.gameObject.GetComponent<PlayerController>();
             col.Health -= damage;
         }
     }

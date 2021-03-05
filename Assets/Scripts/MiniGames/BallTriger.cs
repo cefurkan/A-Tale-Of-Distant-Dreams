@@ -8,11 +8,9 @@ public class BallTriger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerMovement col = collision.gameObject.GetComponent<PlayerMovement>();
+            PlayerController col = collision.gameObject.GetComponent<PlayerController>();
             col.Health -= damage;
             Debug.Log("ss");
 

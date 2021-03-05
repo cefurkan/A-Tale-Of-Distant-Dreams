@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField] private S_Vector2 moveDirection;
     [SerializeField] private PlayerData data;
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;
 
-    public static PlayerMovement instance;
+    public static PlayerController instance;
 
     public string areaTransitionName;
 
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
 
-        if(projectile == null)
+        if (projectile == null)
         {
             isCanShoot = false;
         }
@@ -55,33 +55,20 @@ public class PlayerMovement : MonoBehaviour
         timeBtwShoots = startTimeBtwShoots;
     }
 
-    private void Start() {
-        if(LevelLoader.instance.GetActiveScreenName() == "NarrativeExample"){
+    private void Start()
+    {
+        if (LevelLoader.instance.GetActiveScreenName() == "NarrativeExample")
+        {
 
-        transform.position = data.lastPosition;
+            transform.position = data.lastPosition;
         }
-     
-    
+
+
     }
 
     private void Update()
     {
-        if (isActive)
-        {
-            timeBtwShoots += Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.Space) && timeBtwShoots >= startTimeBtwShoots && isCanShoot)
-            {
-
-                Fire();
-                timeBtwShoots = 0;
-
-            }
-
-            if (health <= 0)
-            {
-                Die();
-            }
-        }
+        Fire();
     }
     void FixedUpdate()
     {
@@ -96,24 +83,27 @@ public class PlayerMovement : MonoBehaviour
         m_v = Input.GetAxisRaw("Vertical");
         m_h = Input.GetAxisRaw("Horizontal");
 
-        if(m_v >= 0.1f || m_h >= 0.1f )
-        {
-            animator.SetFloat("movement", 0.2f);
-        }
-        else
-        {
-            animator.SetFloat("movement", 0f);
-        }
+        //if (m_v >= 0.1f || m_h >= 0.1f)
+        //{
+        //    animator.SetFloat("movement", 0.2f);
+        //}
+        //else
+        //{
+        //    animator.SetFloat("movement", 0f);
+        //}
 
 
         if (isTopdown)
         {
             Vector2 moveDir = new Vector2(m_h, m_v);
             moveDirection.Value = moveDir;
+            Debug.Log("1");
             rb.velocity = moveDir * speed * Time.fixedDeltaTime;
         }
         else
         {
+            Debug.Log("2");
+
             Vector2 moveDir = new Vector2(m_h, 0);
             moveDirection.Value = moveDir;
             rb.velocity = moveDir * speed * Time.fixedDeltaTime;
@@ -122,7 +112,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Fire()
     {
-        Instantiate(projectile, transform.position, transform.rotation);
+        timeBtwShoots += Time.deltaTime;
+        if (Input.GetKeyDown(KeyCode.Space) && timeBtwShoots >= startTimeBtwShoots && isCanShoot)
+        {
+
+            Instantiate(projectile, transform.position, transform.rotation);
+            timeBtwShoots = 0;
+
+        }
+
+        if (health <= 0)
+        {
+            Die();
+        }
     }
 
     void Die()
@@ -136,14 +138,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnDisable()
     {
-
         EventManager.RemoveHandler(GameEvent.onInteractionComplete, OnInteractionComplete);
     }
 
     void OnInteractionComplete()
     {
         isActive = false;
-        rb.velocity = new Vector2(0,0);
+        rb.velocity = new Vector2(0, 0);
         data.lastPosition = transform.position;
     }
     public void TakeDamage(float damage)

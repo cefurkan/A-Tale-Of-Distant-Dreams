@@ -17,9 +17,6 @@ public class LevelLoader : MonoBehaviour
     {
         instance = this;
     }
-
-
-
     public void LoadNextLevel(string levelName)
     {
         StartCoroutine(LoadLevel(levelName));
